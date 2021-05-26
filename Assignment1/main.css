@@ -1,0 +1,16 @@
+*{
+  background-color: darkcyan;
+}
+.row{ 
+    /* border: 3px solid green; */
+    padding: 5%;
+    align-items: center;
+    display: table;
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    margin: auto;
+    top:30%;
+    left:25%;
+background-color:darkgreen
+}

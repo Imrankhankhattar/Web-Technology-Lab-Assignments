@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO List</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <link rel="stylesheet" href="file.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Todo List</h2>
+      <ol class="list-group" id="mytodolist">
+      </ol>
+    </div>
+    <ul class="pager">
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Large"
+        aria-describedby="inputGroup-sizing-sm"
+        id="input"
+      />
+      <div class="alert alert-danger" role="alert" id="error">
+        Nothing to add to list...!
+      </div>
+      <button type="button" class="btn btn-success" id="content" onclick="getContent()">Add Item</button>
+    </ul>
+  </body>
+  <script>
+      document.getElementById('error').style.display='none';
+
+      function getContent()
+      {
+          content=document.getElementById('input').value;
+          console.log(content)
+          if(content==="")
+          {
+            document.getElementById('error').style.display="block"
+            return
+          }
+          else
+          {
+            document.getElementById('error').style.display="none"
+            var node = document.createElement("LI");
+            var textnode = document.createTextNode(content);
+            node.appendChild(textnode);
+            document.getElementById("mytodolist").appendChild(node);
+
+            str=""
+            document.getElementById('input').value=str;
+          }
+      }
+  </script>
+</html>
